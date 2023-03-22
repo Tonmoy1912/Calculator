@@ -14,19 +14,25 @@ function input(){
         is_printed=false;
     }
     if(x=="="){
-        try{
-        ans=eval(exp.join(""));
+        if(exp.length==0){
+            ans_display.innerText=ans;
         }
-        catch(ex){
-            ans=ex;
+        else{
+            try {
+                ans = eval(exp.join(""));
+            }
+            catch (ex) {
+                ans = ex;
+            }
+            ans_display.innerText = ans;
+            is_printed = true;
         }
-        ans_display.innerText=ans;
-        is_printed=true;
     }
     else if(x=="ac"){
         ans_display.innerText="";
         exp_display.innerText="";
         exp.splice(0,exp.length);
+        ans="";
     }
     else if(x=="cancel"){
         exp.pop();
@@ -35,6 +41,19 @@ function input(){
     else{
         exp.push(x);
         exp_display.innerText=exp.join("");
+    }
+    if(exp.length==0){
+        ans_display.innerText=ans;
+    }
+    else{
+        try {
+            ans = eval(exp.join(""));
+        }
+        catch (ex) {
+            ans = ex;
+        }
+        ans_display.innerText = ans;
+        // is_printed = true;
     }
 }
 
