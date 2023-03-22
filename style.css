@@ -52,20 +52,24 @@ body{
     grid-column: 1/span 4;
     box-sizing: border-box;
     border-radius: 5px;
-    overflow:hidden;
+    /* overflow:hidden; */
     color:white;
-    padding: 25px 5px;
+    /* padding: 25px 5px; */
 }
+
+
 
 #ans{
     text-align: end;
-    font-size:35px;
-    
+    font-size:24px;
+    padding: 25px 5px; 
+    overflow-wrap: break-word;
 }
 
 #expression{
     text-align:left;
-    font-size: 50px;
+    font-size: 24px;
+    overflow-wrap: break-word;
 }
 
 #ac{
